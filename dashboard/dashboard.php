@@ -18,6 +18,11 @@ require '../db.php';
       <div class="sl-pagebody">
         <div class="sl-page-title">
           <h5>Blank Page</h5>
+          <?php 
+			$explode=explode('/',$_SERVER['PHP_SELF']);
+			$end_file_ext=end($explode);
+			echo $end_file_ext;
+			?>
           <p>This is a starter page</p>
         </div><!-- sl-page-title -->
         

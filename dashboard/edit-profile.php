@@ -75,6 +75,7 @@ $edit_fetch=mysqli_fetch_assoc($edit_query);
 		
   </form>
        <!-- sl-page-title -->
+       
       
        
       </div>

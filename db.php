@@ -1,5 +1,5 @@
 <?php
-   $db=mysqli_connect('localhost','root','','users');//database name is users
+   $db=mysqli_connect('localhost','root','','users');//database name is users//
 
      if(!$db)
 	 {

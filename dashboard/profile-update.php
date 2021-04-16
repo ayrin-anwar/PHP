@@ -13,6 +13,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	 $explode=explode('.',$image_name);
 	$ext=end($explode);
 	$allow_format=['jpg','png','JPEG','PNG'];
+	
+	
 	if(in_array($ext,$allow_format))
 	{
 		if($_FILES['profile_image']['size']<5000000)
