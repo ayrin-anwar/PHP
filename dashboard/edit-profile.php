@@ -1,7 +1,8 @@
 <?php
+require_once 'session.php';
 require_once  "inc/header.php";
 		require_once '../db.php';
-		require_once 'session.php';
+		
 		
 		//session_start();
 		

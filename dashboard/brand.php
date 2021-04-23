@@ -1,15 +1,11 @@
-<?php
-require_once'session.php';
-
+ <?php
   require_once  "inc/header.php";
     require_once "../db.php";
 
- 
-  $select="SELECT *FROM settings WHERE status=1";
+   $select="SELECT *FROM brands  WHERE status=1";
    $querydata=mysqli_query($db,$select);
-   $select_count="SELECT COUNT(*) as total FROM settings ";
-   $query_count=mysqli_query($db,$select_count);
-   $assoc=mysqli_fetch_assoc($query_count);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +28,7 @@ require_once'session.php';
 
 <div class="container">
  <div class="row">
-  <div class="col-md-10 m-auto">
+  <div class="col-lg-10 m-auto">
    <div class="sl-mainpanel">
       <nav class="breadcrumb sl-breadcrumb">
         <a class="breadcrumb-item" href="index.html">Starlight</a>
@@ -55,39 +51,36 @@ require_once'session.php';
 	    <?php 
 	  endif?>
 	
-  <h2 class="text-center">All Settings</h2>
-  <div class="row">
-  	<div class="col-md-11">
+  <h2 class="text-center">All Portfolio</h2>
+  <div class="text-right">
+      <a href="add-brand.php"><i class="fa fa-plus"></i>ADD</a>
+  	
+  </div>          
   <table class="table" id="myTable">
     <thead>
       <tr>
         
        <th>sl</th>
-          <th>logo</th>
-        <th>copyright</th>
-        <th>about</th>
-        <th>tagline</th>
-          <th>office_address</th>
-            <th>email</th>
-              <th>phone</th>
+        <th>Picture</th>
+       
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
  <?php
 foreach($querydata as $key=>$value){?>
+
  <tr>
-        <td><?=++$key ?></td>
-           <td><img src="logo/<?=$value['logo']?>" width="50" alt="logo"></td>
-          <td><?=$value['copyright']?></td>
-          <td><?=$value['about']?></td>
-            <td><?=$value['tagline']?></td>
-             <td><?=$value['office_address']?></td>
-              <td><?=$value['email']?></td>
-               <td><?=$value['phone']?></td>
-        <td>
-        <a href="add-settings.php?id=<?=$value['id'] ?>" class="btn btn-primary">Edit</a>
       
+        <td><?=++$key ?></td>
+        
+          <td><img src="<?="brandimage/".$value['picture']?>" height="150" width="150" ></td>
+	     
+          
+            
+        <td>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <button  class="btn btn-danger UserDelete" >Delete</button>
         </td>
 </tr>
 
@@ -96,8 +89,7 @@ foreach($querydata as $key=>$value){?>
   
  </tbody>
   </table>
-	</div>
-  </div>   
+	
         </div><!-- sl-page-title -->
        
       </div>

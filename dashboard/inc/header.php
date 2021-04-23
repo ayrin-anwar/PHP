@@ -49,6 +49,7 @@ $explode=explode('/',$_SERVER['PHP_SELF']);
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="../assets/css/starlight.css">
+  
      <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
     <script src="../assets/lib/jquery/jquery.js"></script>
     <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -127,19 +128,32 @@ $explode=explode('/',$_SERVER['PHP_SELF']);
             <span class="menu-item-label">Portfolio</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="#" class="sl-menu-link">
+          <a href="partners.php" class="sl-menu-link <?=$end_file_ext=='partners.php'?'active':'' ?>">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+            <span class="menu-item-label">Partners</span>
+          </div><!-- menu-item -->
+        </a>
+         <a href="brand.php" class="sl-menu-link <?=$end_file_ext=='brand.php'?'active':'' ?>">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+            <span class="menu-item-label">Brand</span>
+          </div><!-- menu-item -->
+        </a>
+         <a href="counter.php" class="sl-menu-link <?=$end_file_ext=='counter.php'?'active':'' ?>">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+            <span class="menu-item-label">Counters</span>
+          </div><!-- menu-item -->
+        </a>
+        <a href="contact.php" class="sl-menu-link <?=$end_file_ext=='contact.php'?'active':'' ?>">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
-            <span class="menu-item-label">Pages</span>
+            <span class="menu-item-label">Contact</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <ul class="sl-menu-sub nav flex-column">
-          <li class="nav-item"><a href="blank.html" class="nav-link">Blank Page</a></li>
-          <li class="nav-item"><a href="page-signin.html" class="nav-link">Signin Page</a></li>
-          <li class="nav-item"><a href="page-signup.html" class="nav-link">Signup Page</a></li>
-          <li class="nav-item"><a href="page-notfound.html" class="nav-link">404 Page Not Found</a></li>
-        </ul>
+        
       </div><!-- sl-sideleft-menu -->
 
       <br>
@@ -157,7 +171,7 @@ $explode=explode('/',$_SERVER['PHP_SELF']);
           <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
               <span class="logged-name"><span class="hidden-md-down"><?=$_SESSION['name']?></span></span>
-    <img src="upload/<?php echo $_SESSION['profile_image']; ?>" width="50" >
+    <img src="upload/<?php echo $_SESSION['profile_image'];?>" width="50" >
     
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">

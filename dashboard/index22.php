@@ -14,11 +14,19 @@
    $service_querydata=mysqli_query($db,$selectservice);
 	 $selectsettings="SELECT *FROM settings ";
    $settings_querydata=mysqli_query($db,$selectsettings);
+	$settingdata=mysqli_fetch_assoc( $settings_querydata);
 	 $selecteducation="SELECT *FROM education WHERE status='active' ORDER BY year DESC";
    $educationquerydata=mysqli_query($db,$selecteducation);
 	 $selectportfolio="SELECT *FROM portfolios WHERE status=1 ";
    $portfolioquerydata=mysqli_query($db,$selectportfolio);
-	
+	$selectpartners="SELECT *FROM partners WHERE status=1 ";
+   $partnerquerydata=mysqli_query($db,$selectpartners);
+		$selectcounters="SELECT *FROM counters WHERE status=1 ";
+   $counterquerydata=mysqli_query($db,$selectcounters);
+	$selectcounters="SELECT *FROM brands WHERE status=1 ";
+   $brandquerydata=mysqli_query($db,$selectcounters);
+	$selectcontact="SELECT *FROM contacts WHERE status=1 ";
+	 $contactquerydata=mysqli_query($db,$selectcontact);
 	?>
 <!-- Mirrored from themebeyond.com/html/kufa/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 06:27:43 GMT -->
 <head>
@@ -35,8 +43,9 @@
         <link rel="stylesheet" href="../front/css/bootstrap.min.css">
         <link rel="stylesheet" href="../front/css/animate.min.css">
         <link rel="stylesheet" href="../front/css/magnific-popup.css">
-        <link rel="stylesheet" href="../front/css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="../front/css/flaticon.css">
+      
+      
+     
         <link rel="stylesheet" href="../front/css/slick.css">
         <link rel="stylesheet" href="../front/css/aos.css">
         <link rel="stylesheet" href="../front/css/default.css">
@@ -65,8 +74,10 @@
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="../front/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="../front/img/logo/s_logo.png" alt="Logo"></a>
+                                    <a href="index.html" class="navbar-brand logo-sticky-none">
+                                    <img src="logo/<?=$settingdata['logo']?>" alt="Logo"></a>
+                                    <a href="index.html" class="navbar-brand s-logo-none">
+									<img src="logo/<?=$settingdata['logo']?>" alt="Logo"></a>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -141,7 +152,8 @@
                             <div class="banner-content">
                                 <h6 class="wow fadeInUp" data-wow-delay="0.2s">HELLO!</h6>
                                 <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am Will Smith</h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer with long time experience in this field​.</p>
+                                <p class="wow fadeInUp" data-wow-delay="0.6s">
+                                <?=$settingdata['tagline']?></p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
                                         <?php
@@ -179,9 +191,7 @@
                                 <h2>About Me</h2>
                             </div>
                             <div class="about-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas
-                                    quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime
-                                    blanditiis culpa vitae velit. Numquam!</p>
+                                <p><?=$settingdata['about']?></p>
                                 <h3>Education:</h3>
                             </div>
                             
@@ -287,50 +297,22 @@
                 <div class="container">
                     <div class="fact-wrap">
                         <div class="row justify-content-between">
+                             <?php foreach($counterquerydata as $key => $value): ?>
                             <div class="col-xl-2 col-lg-3 col-sm-6">
                                 <div class="fact-box text-center mb-50">
                                     <div class="fact-icon">
-                                        <i class="flaticon-award"></i>
+                                        <i class="<?=$value['icon']?>"></i>
                                     </div>
                                     <div class="fact-content">
-                                        <h2><span class="count">245</span></h2>
-                                        <span>Feature Item</span>
+                                        <h2><span class="count"><?=$value['value']?></span></h2>
+                                        <span><?=$value['name']?></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-like"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">345</span></h2>
-                                        <span>Active Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-event"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">39</span></h2>
-                                        <span>Year Experience</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-woman"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">3</span>k</h2>
-                                        <span>Our Clients</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
+                           
+                        
+                           
                         </div>
                     </div>
                 </div>
@@ -351,30 +333,20 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-9 col-lg-10">
                             <div class="testimonial-active">
+                               <?php foreach($partnerquerydata as $key=>$value):?>
                                 <div class="single-testimonial text-center">
                                     <div class="testi-avatar">
-                                        <img src="img/images/testi_avatar.png" alt="img">
+                                        <img src="partners/<?=$value['photo']?>" alt="img">
                                     </div>
                                     <div class="testi-content">
-                                        <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
+                                        <h4><span>“</span><?=$value['message']?><span>”</span></h4>
                                         <div class="testi-avatar-info">
-                                            <h5>tonoy jakson</h5>
-                                            <span>head of idea</span>
+                                            <h5><?=$value['name']?></h5>
+                                            <span><?=$value['designation']?></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-testimonial text-center">
-                                    <div class="testi-avatar">
-                                        <img src="../front/img/images/testi_avatar.png" alt="img">
-                                    </div>
-                                    <div class="testi-content">
-                                        <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
-                                        <div class="testi-avatar-info">
-                                            <h5>tonoy jakson</h5>
-                                            <span>head of idea</span>
-                                        </div>
-                                    </div>
-                                </div>
+                              <?php endforeach ?> 
                             </div>
                         </div>
                     </div>
@@ -385,37 +357,29 @@
             <!-- brand-area -->
             <div class="barnd-area pt-100 pb-100">
                 <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="section-title text-center mb-70">
+                                <span>Partners</span>
+                                <h2>Work With</h2>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row brand-active">
-                        <div class="col-xl-2">
+                     <?php foreach($brandquerydata as $key=>$value):?>
+                      
+                        <div class="col-xl-2 slick-slide slick-cloned">
+                             
+                             
                             <div class="single-brand">
-                                <img src="../front/img/brand/brand_img01.png" alt="img">
+                                <img src="brandimage/<?=$value['picture']?>" alt="img">
                             </div>
+                             
+                           
                         </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="../front/img/brand/brand_img02.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="../front/img/brand/brand_img03.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="../front/img/brand/brand_img04.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="../front/img/brand/brand_img05.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="../front/img/brand/brand_img03.png" alt="img">
-                            </div>
-                        </div>
+                       <?php endforeach ?>  
+                       
+                    
                     </div>
                 </div>
             </div>
@@ -435,18 +399,21 @@
                                 <h5>OFFICE IN <span>NEW YORK</span></h5>
                                 <div class="contact-list">
                                     <ul>
-                                        <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
-                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span>info@exemple.com</li>
+                                        <li><i class="fas fa-map-marker"></i><span>Address :</span>
+                                        <?=$settingdata['office_address']?></li>
+                                        <li><i class="fas fa-headphones"></i><span>Phone :</span> 
+                                        <?=$settingdata['phone']?></li>
+                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span> 
+                                        <?=$settingdata['email']?></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="contact-form">
-                                <form action="#">
-                                    <input type="text" placeholder="your name *">
-                                    <input type="email" placeholder="your email *">
+                                <form action="contact-post.php" method="post">
+                                    <input type="text" placeholder="your name *" name="name" id="name">
+                                    <input type="email" placeholder="your email *" name="email" id="email">
                                     <textarea name="message" id="message" placeholder="your message *"></textarea>
                                     <button class="btn">SEND</button>
                                 </form>

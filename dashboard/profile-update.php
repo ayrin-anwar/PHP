@@ -12,18 +12,20 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	 $image_name=$_FILES['profile_image']['name'];
 	 $explode=explode('.',$image_name);
 	$ext=end($explode);
-	$allow_format=['jpg','png','JPEG','PNG'];
+	$allow_format=['jpg','png','JPEG','PNG','JPG'];
 	
 	
 	if(in_array($ext,$allow_format))
 	{
-		if($_FILES['profile_image']['size']<5000000)
+		if($_FILES['profile_image']['size']<5000000000)
 		{
 			//echo rand(1,3000).$id.'.'.$ext;
-			$new_ext = $id.'.'.$ext;
-			$img_check="SELECT * FROM users WHERE id=$id";
+			 date_default_timezone_set("Asia/Dhaka");
+			$new_ext="profileimage".rand(1,3000).date("i_s_a_M_Y").'.'.$ext;
+			$img_check="SELECT * FROM users WHERE id='$id'";
 			$img_q=mysqli_query($db,$img_check);
 			$img_assoc=mysqli_fetch_assoc($img_q);
+			
 $old_image_location='upload/'.$img_assoc['profile_image'];
 			if($img_assoc['profile_image']!='default.png')
 			{
@@ -46,6 +48,7 @@ $update_query=mysqli_query($db,$update_select);
 if($update_query)
  {
 	$_SESSION['name']=$name;
+	$_SESSION['profile_image']=$new_ext;
 	header('location:edit-profile.php');
 }
 			

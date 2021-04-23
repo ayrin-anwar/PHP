@@ -26,7 +26,7 @@ require_once"inc/header.php";
         <div class="sl-page-title">
          </div>
          <div class="card pd-20 pd-sm-40">
-     <form action="setting-post.php" method="POST" enctype="multipart/form-data">
+     <form action="partners-post.php" method="POST" enctype="multipart/form-data">
         <div class="row">
 			
     <div class="form-group d-none">
@@ -38,56 +38,35 @@ require_once"inc/header.php";
     </div>
    <div class="col-lg-6 m-auto">
     <div class="form-group">
-      <label for="tagline">Tagline:</label>
-  <input type="text"  class="form-control"id="tagline"placeholder="Enter tagline" name="tagline"value="<?=$assoc['tagline']?>">
+      <label for="name">Name:</label>
+  <input type="text"  class="form-control"id="name"placeholder="Enter name" name="name">
       
     
     </div>
      </div>
     <div class="col-lg-6 m-auto">
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email"  class="form-control" id="email"  placeholder="Enter email" name="email"value="<?=$assoc['email']?>">
+      <label for="designation">Designation:</label>
+      <input type="text"  class="form-control" id="designation"  placeholder="Enter designation" name="designation">
       
       
       </div>
       </div>
         <div class="col-lg-6 m-auto">
     <div class="form-group">
-      <label for="phone">Phone:</label>
-      <input type="phone"  class="form-control" id="phone"  placeholder="Enter phone" name="phone" value="<?=$assoc['phone']?>">
+      <label for="message">Message:</label>
+      <input type="text"  class="form-control" id="message"  placeholder="Enter message" name="message" >
       
       
       </div>
       </div>
-         <div class="col-lg-6 m-auto">
-    <div class="form-group">
-      <label for="copyright">copyright:</label>
-      <input type="text"  class="form-control" id="copyright"  placeholder="Enter copyright" name="copyright" value="<?=$assoc['copyright']?>">
+         
+   
       
-      
-      </div>
-      </div>
-       <div class="col-lg-6 m-auto">
-    <div class="form-group">
-      <label for="office_address">Office Address:</label>
-      <input type="text"  class="form-control" id="office_address"  placeholder="Enter office_address" name="office_address"value="<?=$assoc['office_address']?>">
-      
-      
-      </div>
-      </div>
-       <div class="col-lg-6 m-auto">
-    <div class="form-group">
-      <label for="about">About:</label>
-      <input type="text"  class="form-control" id="about"  placeholder="Enter about" name="about" value="<?=$assoc['about']?>">
-      
-      
-      </div>
-      </div>
         <div class="col-lg-6 m-auto">
     <div class="form-group">
-      <label for="logo">Logo:</label>
-      <input type="file"  class="form-control" id="logo"name="logo" value="<?=$assoc['logo']?>">
+      <label for="photo">Photo:</label>
+      <input type="file"  class="form-control" id="photo"name="photo" >
       
       
       </div>
