@@ -3,7 +3,7 @@
 
 !(Users Page)[]
 !(Signup Page)[]
-!(Social Page)[/Screenshot (439).png]
+!(Social Page)[./Screenshot (439).png]
 !(Service Page)[Screenshot (440).png]
 !(Education Page)[Screenshot (441).png]
 !(Portfolio1 Page)[Screenshot (442).png]
