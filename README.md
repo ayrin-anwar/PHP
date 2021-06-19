@@ -14,5 +14,14 @@
 ![Message Page](https://github.com/ayrin-anwar/PHP/blob/43e6375ce2db80df02293eead470d091b4b5ce76/Screenshot%20(447).png)
 ![ChangePassword Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(448).png)
 ![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(449).png)
-![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(450).png)
+![EditProfile2 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(450).png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(457).png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(458.png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(459).png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(460).png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(461).png)
+![EditProfile1 Page](https://github.com/ayrin-anwar/PHP/blob/a43c538c5b5799354fc689a409e35b21045714d1/Screenshot%20(462).png)
+
+
+
 
